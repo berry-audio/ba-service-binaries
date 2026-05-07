@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 # The Python interpreter inside your virtualenv
-ExecStart=/home/pi/env/bin/python /home/pi/builds/camilladsp/camillagui/main.py
+ExecStart=/home/pi/env_dsp/bin/python /home/pi/berryaudio/dsp/camilladsp/camillagui/main.py
 
 # Optional but recommended:
-WorkingDirectory=/home/pi/builds/camilladsp/camillagui/
-Environment="PATH=/home/pi/env/bin"
+WorkingDirectory=/home/pi/berryaudio/dsp/camilladsp/camillagui/
+Environment="PATH=/home/pi/env_dsp/bin"
 Restart=always
 RestartSec=2
 User=pi

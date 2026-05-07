@@ -4,11 +4,14 @@ Description=CamillaDSP Audio Processor
 After=sound.target
 
 [Service]
-ExecStart=/usr/local/bin/camilladsp /home/pi/builds/camilladsp/configs/camilladsp.yml -s /home/pi/builds/camilladsp/statefile.yml -a 0.0.0.0 -p 1234
-Restart=always
+ExecStart=/usr/local/bin/camilladsp /home/pi/berryaudio/dsp/camilladsp/configs/camilladsp.yml -s /home/pi/berryaudio/dsp/camilladsp/statefile.yml -a 0.0.0.0 -p 1234  --logfile /home/pi/berryaudio/dsp/camilladsp/camilladsp.log  --loglevel debug
+ Restart=always
 RestartSec=2
 User=pi
 Group=audio
+CPUAffinity=0 
+Nice=-10 
+IOSchedulingClass=1
 
 [Install]
 WantedBy=multi-user.target

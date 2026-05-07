@@ -3,10 +3,7 @@ Description=Berryaudio Service
 After=network.target
 
 [Service]
-# The Python interpreter inside your virtualenv
-ExecStart=/home/pi/env/bin/berryaudio
-
-# Optional but recommended:
+ExecStart=/home/pi/env/bin/berryaudio -v
 WorkingDirectory=/home/pi/
 Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/home/pi/env/bin"
 Restart=always
